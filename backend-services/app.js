@@ -6,7 +6,7 @@ require('dotenv').config();
 app.use(express.json());
 const nodemailer = require('nodemailer');
 // Enable CORS for all routes
-app.use(cors({origin: process.env.ENVIRONMENT === "LOCAL" ? "http://localhost:3000" : [API_URL, API_URL_WWW]}));
+app.use(cors({origin: process.env.ENVIRONMENT === "LOCAL" ? "http://localhost:3000" : [process.env.API_URL, process.env.API_URL_WWW]}));
 
 
 // Create a transporter using Gmail SMTP
