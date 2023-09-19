@@ -6,7 +6,7 @@ require('dotenv').config();
 app.use(express.json());
 const nodemailer = require('nodemailer');
 // Enable CORS for all routes
-app.use(cors({origin: ["https://booking-limbo.com", "https://www.booking-limbo.com"]}));
+app.use(cors({origin: process.env.ENVIRONMENT === "LOCAL" ? "http://localhost:3000" : [API_URL, API_URL_WWW]}));
 
 
 // Create a transporter using Gmail SMTP
@@ -23,7 +23,6 @@ const transporter = nodemailer.createTransport({
 
 // Define a sample route
 app.post('/api/send-email', cors(), (req, res) => {
-console.log("RECEIVED EMAIL IN BACKEND!")
     const { name, phoneNumber, date, time, message } = req.body;
 
   // Email content

@@ -40,9 +40,9 @@ const BookingPage: React.FC<{}> = () => {
     })
 
     const onSubmit: SubmitHandler<BookingPageForm> = (data) => {
-        console.log("Data sent to backend: ", data)
-        axios
-            .post('https://booking-limbo.com/api/send-email', data) // Use axios.post to send JSON data
+        if (process.env.REACT_APP_BOOKING_API_URL) {
+            axios
+            .post(process.env.REACT_APP_BOOKING_API_URL, data) // Use axios.post to send JSON data
             .then(() => {
                 console.log("Sent to backend successfully with data: ", data)
                 setIsModalOpen(true)
@@ -50,6 +50,9 @@ const BookingPage: React.FC<{}> = () => {
             .catch((error) => {
                 console.error("Encountered the following error while sending data to backend: ", error);
             });
+        } else {
+            throw new Error("REACT_APP_BOOKING_API_URL not set!")
+        }
     }
 
     // TODO: Make these shitty Controllers into reusable components and understand what the onChange and render do
