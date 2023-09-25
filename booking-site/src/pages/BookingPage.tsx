@@ -8,6 +8,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import FormField from "../FormField";
 import Modal from 'react-modal';
 import { useState } from "react";
+import SyncLoader from "react-spinners/SyncLoader";
 
 type BookingPageForm = {
     name: string,
@@ -19,6 +20,8 @@ type BookingPageForm = {
 
 const BookingPage: React.FC<{}> = () => {
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
+    const [isLoading, setIsLoading] = useState<boolean>(false)
+
     // TODO: Export somewhere else
     const timeslots = [
         "18:00 h", "19:00 h", "20:00 h", "21:00 h", "22:00 h", "23:00 h", "00:00 h", "01:00 h", "02:00 h"
@@ -41,15 +44,16 @@ const BookingPage: React.FC<{}> = () => {
 
     const onSubmit: SubmitHandler<BookingPageForm> = (data) => {
         if (process.env.REACT_APP_BOOKING_API_URL) {
+            setIsLoading(true)
             axios
-            .post(process.env.REACT_APP_BOOKING_API_URL, data) // Use axios.post to send JSON data
-            .then(() => {
-                console.log("Sent to backend successfully with data: ", data)
-                setIsModalOpen(true)
-            })
-            .catch((error) => {
-                console.error("Encountered the following error while sending data to backend: ", error);
-            });
+                .post(process.env.REACT_APP_BOOKING_API_URL, data) // Use axios.post to send JSON data
+                .then(() => {
+                    setIsModalOpen(true)
+                    setIsLoading(false)
+                })
+                .catch((error) => {
+                    console.error("Encountered the following error while sending data to backend: ", error);
+                });
         } else {
             throw new Error("REACT_APP_BOOKING_API_URL not set!")
         }
@@ -101,26 +105,27 @@ const BookingPage: React.FC<{}> = () => {
                         <textarea {...register("message")} className="border resize-none border-gray-300 bg-white text-gray-900 appearance-none block w-full rounded-md py-3 px-4 focus:border-blue-500 focus:outline-none" />
                     </FormField>
                 </div>
-                <Button onClick={handleSubmit(onSubmit)} color="blue" text="Book Now" />
+                {!isLoading ? <Button onClick={handleSubmit(onSubmit)} color="blue" text="Book Now" /> : <SyncLoader color="blue" size={8} loading={true} />}
                 <Modal isOpen={isModalOpen}
-                style={
-                    {
-                        content: {
-                            top: '50%',
-                            width: "600px",
-                            left: '50%',
-                            right: 'auto',
-                            bottom: 'auto',
-                            marginRight: '-50%',
-                            transform: 'translate(-50%, -50%)', // Center both horizontally and vertically
+                    style={
+                        {
+                            content: {
+                                top: '50%',
+                                width: "600px",
+                                left: '50%',
+                                right: 'auto',
+                                bottom: 'auto',
+                                marginRight: '-50%',
+                                transform: 'translate(-50%, -50%)', // Center both horizontally and vertically
+                            }
                         }
                     }
-                }
                 >
-                <p className="mb-4">Thank you for your booking! An email has been sent to me. I will contact you shortly.</p>
-                <Button onClick={() => {setIsModalOpen(false)}} color="red" text="Close"/>
+                    <p className="mb-4">Thank you for your booking! An email has been sent to me. I will contact you shortly.</p>
+                    <Button onClick={() => { setIsModalOpen(false) }} color="red" text="Close" />
                 </Modal>
             </form>
+
         </div>
     )
 }
