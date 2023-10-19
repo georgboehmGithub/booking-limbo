@@ -16,13 +16,13 @@ const LandingPage: React.FC<{}> = () => {
         <Header pathToBannerImage={bannerImage} />
         <br></br>
         <p className="mx-4">
-          Ahoi! <br></br> Call me City Limbo. I am one of many Techno artists in
-          Berlin. I created this website to get in touch with people and play
-          heavy techno at your next event. <br></br>
+          I am Hardtechno artist based in Berlin. I created this website to get
+          in touch with people and play at your next event. <br></br>
           <br></br>
         </p>
         <p className="mx-4">
-          My latest Set on Soundcloud to get some idea of my style:
+          Not exactly sure what I define as Hardtechno? Have a taste of my
+          latest drop:
         </p>
         <br />
         <div className="flex justify-center items-center">
