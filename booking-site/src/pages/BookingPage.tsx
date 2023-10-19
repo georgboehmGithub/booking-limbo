@@ -61,72 +61,107 @@ const BookingPage: React.FC<{}> = () => {
 
     // TODO: Make these shitty Controllers into reusable components and understand what the onChange and render do
     return (
-        <div className="p-[20px] w-full h-full bg-blue-100 flex flex-col items-center" id="bookingPageId">
-            <form className="flex flex-col items-center">
-                <div className="mb-4">
-                    <FormField informationType="Name" required={true} >
-                        <input className="border border-gray-300 bg-white text-gray-900 appearance-none block w-full rounded-md py-3 px-4 focus:border-blue-500 focus:outline-none" placeholder="name" {...register("name")}></input>
-                    </FormField>
-                </div>
-                <div className="mb-4">
-                    <FormField informationType="Phone number" required={false} >
-                        <input className="border border-gray-300 bg-white text-gray-900 appearance-none block w-full rounded-md py-3 px-4 focus:border-blue-500 focus:outline-none" placeholder="phone number" {...register("phoneNumber")}></input>
-                    </FormField>
-                </div>
-                <div className="mb-4">
-                    <FormField informationType="Date" required={true}>
-                        <Controller
-                            control={control}
-                            name="date"
-                            render={({ field: { onChange, value } }) => (
-                                <DatePicker className="border border-gray-300 bg-white text-gray-900 appearance-none block w-full rounded-md py-3 px-4 focus:border-blue-500 focus:outline-none" onChange={onChange} placeholderText="date" selected={value} />
-                            )}
-                        />
-                    </FormField>
-                </div>
-                <div className="mb-4">
-                    <FormField informationType="Time" required={true} >
-                        <Controller
-                            control={control}
-                            name="time"
-                            render={({ field: { onChange, value } }) => (
-                                <select name="times" value={value} id="times" onChange={onChange} className="border border-gray-300 bg-white text-gray-900 appearance-none block w-full rounded-md py-3 px-4 focus:border-blue-500 focus:outline-none">
-                                    {timeslots.map((timeslot, index) => (
-                                        <option key={index} value={timeslot}>{timeslot}</option>
-                                    )
-                                    )}
-                                </select>
-                            )}
-                        />
-                    </FormField>
-                </div>
-                <div className="mb-4">
-                    <FormField informationType="Message" required={false}>
-                        <textarea {...register("message")} className="border resize-none border-gray-300 bg-white text-gray-900 appearance-none block w-full rounded-md py-3 px-4 focus:border-blue-500 focus:outline-none" />
-                    </FormField>
-                </div>
-                {!isLoading ? <Button onClick={handleSubmit(onSubmit)} color="blue" text="Book Now" /> : <SyncLoader color="blue" size={8} loading={true} />}
-                <Modal isOpen={isModalOpen}
-                    style={
-                        {
-                            content: {
-                                top: '50%',
-                                width: "600px",
-                                left: '50%',
-                                right: 'auto',
-                                bottom: 'auto',
-                                marginRight: '-50%',
-                                transform: 'translate(-50%, -50%)', // Center both horizontally and vertically
-                            }
-                        }
-                    }
-                >
-                    <p className="mb-4">Thank you for your booking! An email has been sent to me. I will contact you shortly.</p>
-                    <Button onClick={() => { setIsModalOpen(false) }} color="red" text="Close" />
-                </Modal>
-            </form>
-
+<div className="bg-blue-100 flex justify-center" id="bookingPageId">
+  <div className="border border-green-500 flex-grow p-4 max-w-3xl">
+    <form>
+      <div className="flex-grow flex flex-col">
+        <div className="mb-4 border border-red-5">
+          <FormField informationType="Name" required={true}>
+            <input
+              className="border border-gray-300 bg-white text-gray-900 appearance-none block w-full rounded-md py-3 px-4 focus:border-blue-500 focus:outline-none"
+              placeholder="name"
+              {...register("name")}
+            />
+          </FormField>
         </div>
+        <div className="mb-4">
+          <FormField informationType="Phone number" required={false}>
+            <input
+              className="border border-gray-300 bg-white text-gray-900 appearance-none block w-full rounded-md py-3 px-4 focus:border-blue-500 focus:outline-none"
+              placeholder="phone number"
+              {...register("phoneNumber")}
+            />
+          </FormField>
+        </div>
+        <div className="mb-4">
+          <FormField informationType="Date" required={true}>
+            <Controller
+              control={control}
+              name="date"
+              render={({ field: { onChange, value } }) => (
+                <DatePicker
+                  className="border border-gray-300 bg-white text-gray-900 appearance-none block w-full rounded-md py-3 px-4 focus:border-blue-500 focus:outline-none"
+                  onChange={onChange}
+                  placeholderText="date"
+                  selected={value}
+                />
+              )}
+            />
+          </FormField>
+        </div>
+        <div className="mb-4">
+          <FormField informationType="Time" required={true}>
+            <Controller
+              control={control}
+              name="time"
+              render={({ field: { onChange, value } }) => (
+                <select
+                  name="times"
+                  value={value}
+                  id="times"
+                  onChange={onChange}
+                  className="border border-gray-300 bg-white text-gray-900 appearance-none block w-full rounded-md py-3 px-4 focus:border-blue-500 focus:outline-none"
+                >
+                  {timeslots.map((timeslot, index) => (
+                    <option key={index} value={timeslot}>
+                      {timeslot}
+                    </option>
+                  ))}
+                </select>
+              )}
+            />
+          </FormField>
+        </div>
+        <div className="mb-4">
+          <FormField informationType="Message" required={false}>
+            <textarea
+              {...register("message")}
+              className="border resize-none border-gray-300 bg-white text-gray-900 appearance-none block w-full rounded-md py-3 px-4 focus:border-blue-500 focus:outline-none"
+            />
+          </FormField>
+        </div>
+      </div>
+      {!isLoading ? (
+        <Button onClick={handleSubmit(onSubmit)} color="blue" text="Book Now" />
+      ) : (
+        <SyncLoader color="blue" size={8} loading={true} />
+      )}
+      <Modal
+        isOpen={isModalOpen}
+        style={{
+          content: {
+            top: "50%",
+            width: "600px",
+            left: "50%",
+            right: "auto",
+            bottom: "auto",
+            marginRight: "-50%",
+            transform: "translate(-50%, -50%)", // Center both horizontally and vertically
+          },
+        }}
+      >
+        <p className="mb-4">
+          Thank you for your booking! An email has been sent to me. I will contact you shortly.
+        </p>
+        <Button onClick={() => setIsModalOpen(false)} color="red" text="Close" />
+      </Modal>
+    </form>
+  </div>
+</div>
+
+
+
+
     )
 }
 

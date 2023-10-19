@@ -12,8 +12,8 @@ const LandingPage: React.FC<{}> = () => {
   const navigate = useNavigate()
   return (
 
-    <div className="flex flex-col items-center">
-      <div className='w-[700px] border border-gray-300'>
+    <div className="flex flex-col items-center content-center">
+      <div className='border border-gray-300 max-w-3xl'>
         <Header pathToBannerImage={bannerImage} />
         <br></br>
         <p className='mx-4'>Ahoi! <br></br> Call me City Limbo. I am one of many Techno artists in Berlin. I created this website to get in touch with people and play heavy techno at your next event. <br></br><br></br></p>

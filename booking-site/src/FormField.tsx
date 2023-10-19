@@ -19,7 +19,8 @@ const tooltipContents = {
 
 const FormField: React.FC<FormFieldProps> = ({informationType, required, children}) => {
     return (
-        <div className="border rounded-lg border-gray-300 w-[700px] h-36 p-4 bg-white">
+        // TODO: h-36
+        <div className="border rounded-lg border-gray-300 h-36 p-4 bg-white">
             <div className="flex flex-row">
             <p className="font-medium">{informationType}</p>
             {required && (
