@@ -7,7 +7,7 @@ type Props = {
 const Header: React.FC<Props> = ({ pathToBannerImage }) => {
   return pathToBannerImage ? (
     <div className="w-full">
-      <img className="w-full" src={pathToBannerImage}></img>
+      <img className="w-full h-full object-contain" src={pathToBannerImage} />
     </div>
   ) : (
     <></>
