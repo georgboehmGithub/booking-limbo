@@ -1,12 +1,10 @@
 import React from "react";
-import logo from "../logo.svg";
 import "../App.css";
-import Header from "../Header";
 import bannerImage from "../Banner.jpeg";
-import Button from "../Button";
-import TextArea from "../Textarea";
-import SoundcloudPlayer from "../SoundcloudPlayer";
+import Button from "../components/Button";
+import SoundcloudPlayer from "../components/SoundcloudPlayer";
 import { useNavigate } from "react-router-dom";
+import Header from "../components/Header";
 
 const LandingPage: React.FC<{}> = () => {
   const navigate = useNavigate();
