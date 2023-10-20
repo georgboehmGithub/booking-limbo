@@ -23,7 +23,7 @@ const Artist: React.FC<Props> = ({ name, description, pictureURL }) => {
       </div>
       <div
         id="artistDescription"
-        className="flex-grow w-1/2 flex items-center mb-10"
+        className="flex-grow w-1/2 flex items-center mb-10 mx-4"
       >
         <p>{description}</p>
       </div>

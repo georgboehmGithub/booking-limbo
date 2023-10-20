@@ -3,7 +3,6 @@ import SoundcloudPlayer from "./SoundcloudPlayer";
 type Props = {};
 
 const Track: React.FC<Props> = ({}) => {
-  // TODO: mx-4 in parent
   return (
     <div className="">
       <div className="flex justify-center items-center flex-col">
