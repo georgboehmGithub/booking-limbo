@@ -55,7 +55,10 @@ const BookingPage: React.FC<{}> = () => {
   };
 
   return (
-    <div className="bg-blue-100 flex  justify-center" id="bookingPageId">
+    <div
+      className="bg-blue-100 h-screen flex justify-center"
+      id="bookingPageId"
+    >
       <div className="flex-grow p-4 max-w-3xl">
         <form>
           <div className="flex-grow flex flex-col">

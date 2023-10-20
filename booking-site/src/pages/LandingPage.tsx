@@ -11,7 +11,7 @@ import profilePicture from "../pics/profilePicture.jpeg";
 const LandingPage: React.FC<{}> = () => {
   const navigate = useNavigate();
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center h-screen">
       <div className="border border-gray-300 max-w-3xl flex-grow flex-col flex">
         <div className="mb-4">
           <Header pathToBannerImage={bannerImage} />
@@ -20,8 +20,8 @@ const LandingPage: React.FC<{}> = () => {
           <Artist
             name="city limbo"
             description="I am a Hardtechno artist based in Berlin. I created this website to
-            get in touch with people and play at your next event. Not exactly sure what I define as Hardtechno? Have a taste of my
-            latest drop."
+            get in touch with people and play at your next event. Have a taste of my
+            latest set."
             pictureURL={profilePicture}
           />
         </div>

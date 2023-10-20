@@ -1,3 +1,5 @@
+import React from "react";
+
 type Props = {
   name: string;
   description: string;
@@ -23,7 +25,7 @@ const Artist: React.FC<Props> = ({ name, description, pictureURL }) => {
         id="artistDescription"
         className="flex-grow w-1/2 flex items-center mb-10"
       >
-        <p className="text-center">{description}</p>
+        <p>{description}</p>
       </div>
     </div>
   );
