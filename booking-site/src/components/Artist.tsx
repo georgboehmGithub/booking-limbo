@@ -9,11 +9,11 @@ type Props = {
 const Artist: React.FC<Props> = ({ name, description, pictureURL }) => {
   return (
     <div className="h-full flex flex-row">
-      <div id="artistShowcase" className="flex-grow rounded-lg w-1/4">
-        <div className="flex flex-col items-center h-full">
+      <div id="artistShowcase" className="flex-grow rounded-lg w-2/5">
+        <div className="flex flex-col items-center h-full w-full">
           <div className="flex items-center justify-center h-3/4">
             <img
-              className="rounded-full object-contain h-full max-w-full max-h-full"
+              className="rounded-full object-contain h-full w-full"
               src={pictureURL}
               alt={name}
             />

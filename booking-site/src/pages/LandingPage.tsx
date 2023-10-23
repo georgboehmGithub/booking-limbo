@@ -3,10 +3,11 @@ import "../App.css";
 import bannerImage from "../Banner.jpeg";
 import Button from "../components/Button";
 import { useNavigate } from "react-router-dom";
-import Header from "../components/Header";
+import Header from "../components/Banner";
 import Artist from "../components/Artist";
 import Track from "../components/Track";
 import profilePicture from "../pics/profilePicture.jpeg";
+import TabbedNavigation from "../components/TabbedNavigation";
 
 const LandingPage: React.FC<{}> = () => {
   const navigate = useNavigate();
@@ -25,9 +26,11 @@ const LandingPage: React.FC<{}> = () => {
             pictureURL={profilePicture}
           />
         </div>
+        <div className="h-2/4">
+          <TabbedNavigation />
+        </div>
         <div className="mb-4 h-1/5">
-          <Track />
-          <div className="flex justify-center mt-10">
+          <div className="flex justify-center">
             <Button
               onClick={() => navigate("booking")}
               text="Book now"

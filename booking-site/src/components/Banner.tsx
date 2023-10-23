@@ -4,7 +4,7 @@ type Props = {
   pathToBannerImage: string;
 };
 
-const Header: React.FC<Props> = ({ pathToBannerImage }) => {
+const Banner: React.FC<Props> = ({ pathToBannerImage }) => {
   return pathToBannerImage ? (
     <div className="w-full">
       <img className="w-full h-full object-contain" src={pathToBannerImage} />
@@ -14,4 +14,4 @@ const Header: React.FC<Props> = ({ pathToBannerImage }) => {
   );
 };
 
-export default Header;
+export default Banner;

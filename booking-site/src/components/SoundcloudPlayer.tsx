@@ -1,21 +1,34 @@
 type Props = {
   divStyle: Record<string, string>;
   linkStyles: Record<string, string>;
+  playerSrc: string;
+  artistTitle: string;
+  artistLink: string;
+  trackTitle: string;
+  trackLink: string;
 };
 
-const SoundcloudPlayer: React.FC<Props> = ({ linkStyles, divStyle }) => (
+const SoundcloudPlayer: React.FC<Props> = ({
+  linkStyles,
+  divStyle,
+  playerSrc,
+  artistTitle,
+  artistLink,
+  trackTitle,
+  trackLink,
+}) => (
   <>
     <iframe
       width="80%"
       className="mx-4"
       height="80%"
       allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1603444233&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+      src={playerSrc}
     />
     <div style={divStyle}>
       <a
-        href="https://soundcloud.com/limbo_m"
-        title="city limbo"
+        href={artistLink}
+        title={artistTitle}
         target="_blank"
         style={linkStyles}
         className="ml-4"
@@ -23,12 +36,7 @@ const SoundcloudPlayer: React.FC<Props> = ({ linkStyles, divStyle }) => (
         city limbo
       </a>{" "}
       ·{" "}
-      <a
-        href="https://soundcloud.com/limbo_m/yamato"
-        title="Yamato"
-        target="_blank"
-        style={linkStyles}
-      >
+      <a href={trackLink} title={trackTitle} target="_blank" style={linkStyles}>
         Yamato
       </a>
     </div>
