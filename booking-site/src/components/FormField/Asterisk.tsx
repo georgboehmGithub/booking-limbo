@@ -13,7 +13,7 @@ const Asterisk: React.FC<Props> = ({ required, informationType }) => (
     <FontAwesomeIcon
       icon={required ? faAsterisk : faInfoCircle}
       size="xs"
-      color={required ? "red" : "blue"}
+      color="white"
       className="ml-1"
       data-tooltip-id={`my-tooltip-${informationType}`}
       data-tooltip-content={

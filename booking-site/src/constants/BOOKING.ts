@@ -11,10 +11,10 @@ export const BOOKING_TIMESLOTS = [
   ];
   
   export const BOOKINGFIELD_TOOLTIP_CONTENTS = {
-    Name: "Does not have to be your full name.",
-    Date: "When should I play?",
-    Time: "At what time should I play?",
-    "Phone number":
+    name: "Does not have to be your full name.",
+    date: "When should I play?",
+    time: "At what time should I play?",
+    "phoneNumber":
       "You can also leave this blank and provide me with other contact information in your message.",
-    Message: "Anything that seems additionally relevant to you.",
+    message: "Anything that seems additionally relevant to you.",
   };

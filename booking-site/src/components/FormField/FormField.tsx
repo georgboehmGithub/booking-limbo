@@ -19,9 +19,9 @@ const FormField: React.FC<FormFieldProps> = ({
   control,
 }) => {
   return (
-    <div className="border rounded-lg border-gray-300 h-1/4 p-4 mb-4 bg-white">
+    <div className="border rounded-lg border-gray-300 h-1/4 p-4 mb-4 bg-blue-600">
       <div className="flex flex-row">
-        <p className="font-medium">{informationType}</p>
+        <p className="font-medium text-white">{informationType}</p>
         <Asterisk required={required} informationType={informationType} />
       </div>
       <div
