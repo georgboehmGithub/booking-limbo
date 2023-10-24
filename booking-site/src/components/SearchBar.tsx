@@ -13,7 +13,7 @@ const SearchBar: React.FC<Props> = ({ onSearch }) => {
   };
 
   return (
-    <div className="flex align-center justify-center px-2 border border-green-500">
+    <div className="flex align-center justify-center px-2">
       <input
         type="text"
         placeholder="Search..."

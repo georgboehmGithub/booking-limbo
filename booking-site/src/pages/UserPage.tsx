@@ -9,10 +9,10 @@ import profilePicture from "../pics/profilePicture.jpeg";
 import TabbedNavigation from "../components/TabbedNavigation";
 import Header from "../components/Header";
 
-const LandingPage: React.FC<{}> = () => {
+const UserPage: React.FC<{}> = () => {
   const navigate = useNavigate();
   return (
-    <div className="flex flex-col border border-red-500">
+    <div className="flex flex-col mt-14">
       <Header />
       <div className="flex justify-center items-center h-full flex-grow">
         <div className="border border-gray-300 max-w-3xl">
@@ -34,7 +34,7 @@ const LandingPage: React.FC<{}> = () => {
           <div className="mb-4 h-1/5">
             <div className="flex justify-center">
               <Button
-                onClick={() => navigate("booking")}
+                onClick={() => navigate("/booking")}
                 text="Book now"
                 type="primary"
               />
@@ -46,4 +46,4 @@ const LandingPage: React.FC<{}> = () => {
   );
 };
 
-export default LandingPage;
+export default UserPage;
