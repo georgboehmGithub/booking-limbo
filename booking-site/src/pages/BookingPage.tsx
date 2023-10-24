@@ -91,7 +91,7 @@ const BookingPage: React.FC<{}> = () => {
             {!isLoading ? (
               <Button
                 onClick={handleSubmit(onSubmit)}
-                color="blue"
+                type="primary"
                 text="Book Now"
               />
             ) : (

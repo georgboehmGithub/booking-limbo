@@ -25,7 +25,7 @@ const CloseModal: React.FC<Props> = ({ isOpen, onClose, message }) => (
     }}
   >
     <p className="mb-4">{message}</p>
-    <Button onClick={onClose} color="red" text="Close" />
+    <Button onClick={onClose} type="cancel" text="Close" />
   </Modal>
 );
 
