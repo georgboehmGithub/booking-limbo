@@ -1,6 +1,4 @@
-import React from "react";
-
-const ContactDetails = () => {
+const ContactDetails: React.FC<{}> = () => {
   // Dummy contact details
   const contactInfo = [
     "Email: general.booking.limbo@gmail.com",

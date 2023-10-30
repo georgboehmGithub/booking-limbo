@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 type Props = {
   onSearch: (searchTerm: string) => void;

@@ -1,10 +1,5 @@
-import { useNavigate } from "react-router-dom";
-import Header from "../components/Header";
-import Button from "../components/Button";
-import Banner from "../components/Banner";
-import bannerImage from "../Banner.jpeg";
-import SearchOptions from "../components/SearchOptions";
-import backgroundImage from "../pics/homescreenBackground.jpg";
+import Header from "./Header/Header";
+import SearchOptions from "../components/Artist Search/SearchOptions";
 
 const HomePage: React.FC<{}> = () => {
   return (

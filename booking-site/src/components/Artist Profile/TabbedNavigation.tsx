@@ -1,14 +1,13 @@
-import React, { useState } from "react";
-import DetailsTable from "../components/Artist Profile/DetailsTable"; // Import your DetailsTable component
+import { useState } from "react";
+import DetailsTable from "./DetailsTable";
 import Track from "./Track";
-import ContentWrapper from "./Artist Profile/ContentWrapper";
-import ContactDetails from "./Artist Profile/ContactDetails";
+import ContentWrapper from "./ContentWrapper";
+import ContactDetails from "./ContactDetails";
 
 const TabbedNavigation = () => {
   const tabs = ["Details", "Tracks", "Contact details"];
   const [activeTab, setActiveTab] = useState(0);
 
-  // Create a function to render the content component based on the active tab
   const renderContent = (tabIndex: number) => {
     switch (tabs[tabIndex]) {
       case "Details":

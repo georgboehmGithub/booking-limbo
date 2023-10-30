@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import mainLogo from "../bookingLimboLogo.jpeg";
+import mainLogo from "../../assets/bookingLimboLogo.jpeg";
 
 const Icon: React.FC<{}> = () => {
   const navigate = useNavigate();

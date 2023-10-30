@@ -1,5 +1,5 @@
-import Button from "./Button";
-import Icon from "./Icon";
+import Button from "../../components/Base components/Button";
+import Icon from "../../components/Base components/Icon";
 import SearchBar from "./SearchBar";
 
 const Header: React.FC<{}> = () => {

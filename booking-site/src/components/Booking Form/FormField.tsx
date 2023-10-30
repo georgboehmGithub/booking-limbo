@@ -1,8 +1,6 @@
 import classNames from "classnames";
 import { Controller, Control } from "react-hook-form";
-
 import DatePicker from "react-datepicker";
-
 import Asterisk from "./Asterisk";
 import { BOOKING_TIMESLOTS } from "../../constants/BOOKING";
 import { BookingPageForm } from "../../pages/BookingPage";

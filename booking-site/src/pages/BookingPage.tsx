@@ -1,15 +1,15 @@
-import Button from "../components/Button";
+import Button from "../components/Base components/Button";
 import { useForm, SubmitHandler } from "react-hook-form";
 import axios from "axios";
-import bannerImage from "../Banner.jpeg";
+import bannerImage from "../assets/Banner.jpeg";
 import "react-dropdown/style.css";
 import "react-datepicker/dist/react-datepicker.css";
 import { useState } from "react";
 import SyncLoader from "react-spinners/SyncLoader";
-import CloseModal from "../components/CloseModal";
-import FormField from "../components/FormField/FormField";
-import Header from "../components/Header";
-import Banner from "../components/Banner";
+import CloseModal from "../components/Base components/CloseModal";
+import FormField from "../components/Booking Form/FormField";
+import Header from "./Header/Header";
+import Banner from "../components/Artist Profile/Banner";
 
 export type BookingPageForm = {
   name: string;

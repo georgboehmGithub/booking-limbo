@@ -1,9 +1,6 @@
-// TODO: Background image
-
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import BPMSlider from "./BPMSlider";
-import Dropdown from "./Dropdown";
-import Button from "./Button";
+import Button from "../Base components/Button";
 import { useNavigate } from "react-router-dom";
 
 type SearchOptionsForm = {
@@ -78,10 +75,11 @@ const SearchOptions: React.FC<{}> = () => {
                   name={"eventType"}
                   render={({ field: { onChange, value } }) => {
                     return (
-                      <Dropdown
+                      <input
+                        className="w-full"
+                        placeholder="Event type"
                         onChange={onChange}
                         value={value}
-                        options={["opt1", "opt2", "opt3qwejnqwejnqjnwenjqwnje"]}
                       />
                     );
                   }}

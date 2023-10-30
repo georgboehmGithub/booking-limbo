@@ -1,13 +1,13 @@
 import React from "react";
 import "../App.css";
-import bannerImage from "../Banner.jpeg";
-import Button from "../components/Button";
+import bannerImage from "../assets/Banner.jpeg";
+import Button from "../components/Base components/Button";
 import { useNavigate } from "react-router-dom";
-import Banner from "../components/Banner";
-import Artist from "../components/Artist";
-import profilePicture from "../pics/profilePicture.jpeg";
-import TabbedNavigation from "../components/TabbedNavigation";
-import Header from "../components/Header";
+import Banner from "../components/Artist Profile/Banner";
+import Artist from "../components/Artist Profile/Artist";
+import profilePicture from "../assets/profilePicture.jpeg";
+import TabbedNavigation from "../components/Artist Profile/TabbedNavigation";
+import Header from "./Header/Header";
 
 const UserPage: React.FC<{}> = () => {
   const navigate = useNavigate();
