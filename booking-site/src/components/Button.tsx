@@ -10,7 +10,7 @@ type Props = {
 const Button: React.FC<Props> = ({ onClick, text, type }) => (
   <button
     className={classNames(
-      "border appearance-none block py-3 px-4 h-full",
+      "border appearance-none block py-3.5 px-4 h-full",
       {
         "bg-blue-600 hover:bg-blue-800 text-white": type === "primary",
         "bg-red-600 hover:bg-red-800 text-white": type === "cancel",
@@ -22,7 +22,7 @@ const Button: React.FC<Props> = ({ onClick, text, type }) => (
       },
       {
         "w-40": type === "primary" || type === "cancel",
-        "w-full": type === "navigation",
+        "w-full h-full": type === "navigation",
       },
       "font-inter text-14px"
     )}

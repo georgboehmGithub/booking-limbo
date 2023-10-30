@@ -48,9 +48,9 @@ const TabbedNavigation = () => {
         {tabs.map((tab, index) => (
           <button
             key={index}
-            className={`py-2 px-4 mx-1 focus:outline-none ${
-              index === activeTab ? "border-b-2 border-black" : ""
-            }`}
+            className={`py-2 px-4 mx-1 focus:outline-none 
+            
+            ${index === activeTab ? "border-b-2 border-black" : ""}`}
             onClick={() => setActiveTab(index)}
           >
             {tab}

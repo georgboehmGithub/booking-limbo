@@ -37,11 +37,11 @@ const SearchOptions: React.FC<{}> = () => {
   };
 
   return (
-    <div>
-      <div className="flex justify-center mt-10">
+    <div className="w-full flex justify-center flex-col">
+      <div className="mt-10">
         <form>
-          <div className="flex justify-center">
-            <div className="p-4 w-2/5">
+          <div className="flex w-full justify-center">
+            <div className="p-4">
               <div className="mb-4 text-white">Genre</div>
               <Controller
                 control={control}
@@ -58,7 +58,7 @@ const SearchOptions: React.FC<{}> = () => {
                 }}
               />
             </div>
-            <div className="p-4 w-2/5">
+            <div className="p-4">
               <div className="mb-4 text-white">Beats per minute</div>
               <Controller
                 control={control}
@@ -70,7 +70,7 @@ const SearchOptions: React.FC<{}> = () => {
                 }}
               />
             </div>
-            <div className="p-4 w-3/5">
+            <div className="p-4">
               <div className="mb-4 text-white">Event type</div>
               <div>
                 <Controller
